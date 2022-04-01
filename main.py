@@ -6,7 +6,7 @@ def activateKey(ip, username, key):
     print(resp)
 
 def changeIP(ip, key):
-    resp = httpx.post(f'change_ip?ip={ip}&api_key={key}')
+    resp = httpx.post(f'http://www.proxies.gay/change_ip?ip={ip}&api_key={key}')
     print(resp)
 
 def scrapeProxies():
@@ -16,15 +16,22 @@ def scrapeProxies():
 
 def saveProxy(ip):
     with open('proxies.txt', 'w') as f:
+        # write ip then newline
         f.write(ip + '\n')
+        f.close()
+
 
 def getMyIpv4():
     my_ip = socket.gethostbyname(socket.gethostname())
     return my_ip
 
 def main():
-    my_ip = getMyIpv4()
-    activateKey(my_ip, config["username"], config['key'])
+    try:
+        my_ip = getMyIpv4()
+        activateKey(my_ip, config['username'], config['key'])
+    except:
+        my_ip = changeIP(getMyIpv4, config['key'])
+
     while True:
         new_ip = getMyIpv4()
         if new_ip != my_ip:
