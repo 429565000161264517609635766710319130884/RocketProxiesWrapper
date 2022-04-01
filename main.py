@@ -15,11 +15,9 @@ def scrapeProxies():
     return ip_address
 
 def saveProxy(ip):
-    with open('proxies.txt', 'w') as f:
-        # write ip then newline
+    with open('proxies.txt', 'a') as f:
         f.write(ip + '\n')
         f.close()
-
 
 def getMyIpv4():
     my_ip = socket.gethostbyname(socket.gethostname())
