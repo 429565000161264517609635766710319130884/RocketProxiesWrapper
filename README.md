@@ -18,4 +18,6 @@ proxy = rp.getProxy()
 # activate key to use proxy
 resp = rp.activateKey('username')
 resp = httpx.get('https://www.google.com', proxies='http://' + proxy, timeout=4)
+
+print(resp.text)
 ```
