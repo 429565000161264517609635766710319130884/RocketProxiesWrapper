@@ -8,11 +8,11 @@ pip install -U git+https://github.com/Mewzax/RocketProxiesWrapper
 
 # Usage
 ```py
-import requests, httpx
+import httpx
 
 from RocketProxies import RocketProxies
 
-rp = RocketProxies(requests.get('https://api.ipify.org').content.decode('utf8'), 'YOUR_API_KEY')
+rp = RocketProxies(httpx.get('https://api.ipify.org').content.decode('utf8'), 'YOUR_API_KEY')
 proxy = rp.getProxy()
 
 # activate key to use proxy
