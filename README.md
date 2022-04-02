@@ -1,6 +1,11 @@
 # RocketProxiesWrapper
 shitty wrapper i even don't know why i made this i'll probably delete
 
+# Install
+```
+pip install -U git+https://github.com/Mewzax/RocketProxiesWrapper
+```
+
 # Usage
 ```py
 import requests, httpx
