@@ -9,8 +9,8 @@ class RocketProxies:
         resp = httpx.post(f'http://www.proxies.gay/activate?ip={self.ip}&username={username}&api_key={self.key}')
         return resp
 
-    def changeIP(self):
-        resp = httpx.post(f'http://www.proxies.gay/change_ip?ip={self.ip}&api_key={self.key}')
+    def changeIP(self, newip):
+        resp = httpx.post(f'http://www.proxies.gay/change_ip?ip={newip}&api_key={self.key}')
         return resp
 
     def getProxy(self):
